@@ -9,5 +9,5 @@ services:
     ports:
       - "9000:9000"
     environment:
-      - BASE_URL="http://boxes.site:900"
-      - PORT=900
+      - BASE_URL="http://boxes.site:9000"
+      - PORT=9000

@@ -1,0 +1,13 @@
+version: '3'
+services:
+  vagrant-catalog:
+    build:
+      context: .
+    image: tkambler/vagrant-catalog
+    volumes:
+      - ./boxes:/opt/app/boxes
+    ports:
+      - "9000:9000"
+    environment:
+      - BASE_URL="http://boxes.site:900"
+      - PORT=900

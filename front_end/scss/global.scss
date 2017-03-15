@@ -1,0 +1,19 @@
+* {
+    font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    &.container-fluid {
+        padding-top: 15px;
+    }
+}
+
+a {
+    cursor: pointer;
+}

@@ -1,0 +1,5 @@
+{
+    "port": "env:PORT",
+    "boxes_path": "path:../boxes",
+    "base_url": "env:BASE_URL"
+}

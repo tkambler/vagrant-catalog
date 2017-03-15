@@ -1,0 +1,9 @@
+FROM mhart/alpine-node:6.10.0
+RUN apk update; apk upgrade
+RUN apk add \
+    htop \
+    tree \
+    bash
+RUN npm i -g \
+    yarn \
+    nodemon

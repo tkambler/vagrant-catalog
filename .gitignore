@@ -2,3 +2,5 @@
 boxes/
 node_modules/
 *.log
+db.sqlite
+

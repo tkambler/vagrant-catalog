@@ -9,14 +9,17 @@
   },
   "dependencies": {
     "bluebird": "^3.5.0",
+    "bookshelf": "^0.10.3",
     "checksum": "^0.1.1",
     "confit": "^2.1.0",
     "express": "^4.15.2",
     "fs-extra": "^2.0.0",
+    "knex": "^0.12.8",
     "lodash": "^4.17.4",
     "morgan": "^1.8.1",
     "shortstop-concat": "^1.0.1",
     "shortstop-handlers": "^1.0.1",
+    "sqlite3": "^3.1.8",
     "winston": "^2.3.1"
   }
 }

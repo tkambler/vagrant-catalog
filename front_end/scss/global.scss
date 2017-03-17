@@ -17,3 +17,8 @@ body {
 a {
     cursor: pointer;
 }
+
+ui-view {
+    display: block;
+    height: 100%;
+}

@@ -26,43 +26,34 @@ module.exports = (grunt) => {
                     'node_modules/jquery/dist/jquery.js',
                     'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
                     'node_modules/angular/angular.js',
-                    'node_modules/restangular/dist/restangular.min.js'
+                    'node_modules/restangular/dist/restangular.min.js',
+                    'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+                    'node_modules/angular-ui-router/release/angular-ui-router.js'
                 ],
-                'dest': 'www/js/concat.js'
+                'dest': 'www/js/concat.js',
+                'nonull': true
             }
         },
         'concat-verify': {
             'dist': {}
         },
         'browserify': {
-            'options': {
-                'src': [],
-                'dest': null,
-                'paths': [],
-                'external': [],
-                'exclude': [],
-                'require': [],
-                'babelify': {
-                    'enable': false
-                },
-                'noParse': [],
-                'extensions': ['.js', '.json']
-            },
             'app': {
                 'options': {
-                    'src': ['src/index.js'],
-                    'dest': 'www/js/app.bundle.js',
-                    'paths': ['src'],
-                    'exclude': [],
-                    'babelify': {
-                        'enable': true,
-                        'options': {
-                            'extensions': ['.js'],
-                            'presets': ['es2015'],
-                            'plugins': [
-                            ]
-                        }
+                    'watch': grunt.option('watch'),
+                    'keepAlive': grunt.option('watch'),
+                    'transform': [
+                        'brfs',
+                        'browserify-shim',
+                        'bulkify',
+                        'babelify'
+                    ],
+                    'browserifyOptions': {
+                        'paths': ['src']
                     }
+                },
+                'files': {
+                    'www/js/app.bundle.js': 'src/index.js'
                 }
             }
         },
@@ -91,6 +82,17 @@ module.exports = (grunt) => {
                 ],
                 'tasks': [
                     'compass'
+                ],
+                'options': {
+                    'interrupt': true
+                }
+            },
+            'bundle': {
+                'files': [
+                    'src/**/*'
+                ],
+                'tasks': [
+                    'browserify'
                 ],
                 'options': {
                     'interrupt': true
@@ -146,8 +148,7 @@ module.exports = (grunt) => {
     });
 
     grunt.registerTask('build', ['clean', 'copy', 'compass', 'concat']);
+    grunt.registerTask('build-serve', ['build', 'concurrent']);
     grunt.registerTask('default', ['build']);
-    grunt.registerTask('serve', ['build', 'concurrent']);
-    grunt.loadTasks('tasks');
 
 };

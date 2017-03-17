@@ -1,5 +1,17 @@
 {
     "port": "env:PORT",
     "boxes_path": "path:../boxes",
-    "base_url": "env:BASE_URL"
+    "base_url": "env:BASE_URL",
+    "app_dir": "path:../",
+    "frontend_dir": "path:../front_end/www",
+    "db": {
+        "client": "sqlite3",
+        "connection": {
+            "filename": "path:../db.sqlite"
+        },
+        "debug": false
+    },
+    "registration": {
+        "enabled": true
+    }
 }

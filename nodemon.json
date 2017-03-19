@@ -2,6 +2,7 @@
     "verbose": true,
     "ignore": [
         "front_end/**/*",
+        "uploads/**/*",
         "boxes/**/*"
     ],
     "ext": "js json",

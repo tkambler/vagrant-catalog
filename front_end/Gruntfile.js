@@ -27,8 +27,14 @@ module.exports = (grunt) => {
                     'node_modules/bootstrap-sass/assets/javascripts/bootstrap.js',
                     'node_modules/angular/angular.js',
                     'node_modules/restangular/dist/restangular.min.js',
+                    'node_modules/angular-sanitize/angular-sanitize.js',
                     'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
-                    'node_modules/angular-ui-router/release/angular-ui-router.js'
+                    'node_modules/angular-ui-router/release/angular-ui-router.js',
+                    'node_modules/angular-validation-match/dist/angular-validation-match.js',
+                    'node_modules/bluebird/js/browser/bluebird.js',
+                    'node_modules/noty/js/noty/packaged/jquery.noty.packaged.js',
+                    'node_modules/noty/js/noty/themes/bootstrap.js',
+                    'node_modules/noty/js/noty/layouts/topCenter.js',
                 ],
                 'dest': 'www/js/concat.js',
                 'nonull': true
@@ -78,7 +84,8 @@ module.exports = (grunt) => {
         'watch': {
             'scss': {
                 'files': [
-                    'scss/**/*'
+                    'scss/**/*',
+                    'Gruntfile.js'
                 ],
                 'tasks': [
                     'compass'
@@ -89,10 +96,23 @@ module.exports = (grunt) => {
             },
             'bundle': {
                 'files': [
-                    'src/**/*'
+                    'src/**/*',
+                    'Gruntfile.js'
                 ],
                 'tasks': [
                     'browserify'
+                ],
+                'options': {
+                    'interrupt': true
+                }
+            },
+            'concat': {
+                'files': [
+                    '<%= concat.dist.src %>',
+                    'Gruntfile.js'
+                ],
+                'tasks': [
+                    'concat'
                 ],
                 'options': {
                     'interrupt': true
@@ -126,6 +146,14 @@ module.exports = (grunt) => {
                 ]
             }
         },
+        'cssmin': {
+            'vendor': {
+                'files': {
+                    'www/css/vendor.css': [
+                    ]
+                }
+            }
+        },
         'connect': {
             'server': {
                 'options': {
@@ -147,7 +175,7 @@ module.exports = (grunt) => {
         }
     });
 
-    grunt.registerTask('build', ['clean', 'copy', 'compass', 'concat']);
+    grunt.registerTask('build', ['clean', 'copy', 'compass', 'cssmin', 'concat']);
     grunt.registerTask('build-serve', ['build', 'concurrent']);
     grunt.registerTask('default', ['build']);
 

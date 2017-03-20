@@ -7,9 +7,10 @@
     <title>Vagrant Catalog</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
-<body class="container-fluid">
+<body>
 
-    <ui-view></ui-view>
+    <div ui-view="header" id="header"></div>
+    <div ui-view="body" class="container-fluid"></div>
 
     <script src="/js/concat.js"></script>
     <script src="/js/app.bundle.js"></script>

@@ -1,9 +1,9 @@
 {
     "verbose": true,
     "ignore": [
-        "front_end/**/*",
-        "uploads/**/*",
-        "boxes/**/*"
+        "/front_end/**/*",
+        "/uploads/**/*",
+        "/boxes/**/*"
     ],
     "ext": "js json",
     "exitcrash": true,

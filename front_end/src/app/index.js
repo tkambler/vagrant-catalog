@@ -16,13 +16,14 @@ const app = module.exports = angular.module('app', [
     'notify'
 ]);
 
-bulk(__dirname, ['services/*', 'directives/*']);
+bulk(__dirname, ['services/*', 'directives/*', 'components/*']);
 
 app.config(function($stateProvider, $urlRouterProvider, RestangularProvider) {
 
     RestangularProvider.setBaseUrl('/api');
 
     RestangularProvider.setResponseExtractor((response) => {
+        if (!response) return response;
         let newResponse = response;
         if (angular.isArray(response)) {
             angular.forEach(newResponse, (value, key) => {
@@ -48,5 +49,4 @@ app.config(function($stateProvider, $urlRouterProvider, RestangularProvider) {
 });
 
 app.run(($log) => {
-    $log.debug('app is running');
 });

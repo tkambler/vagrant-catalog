@@ -1,9 +1,30 @@
 .box-panel {
     table {
+        thead {
+            th {
+                vertical-align: middle;
+                &:first-child {
+                    padding-left: 15px;
+                }
+                &:last-child {
+                    padding-right: 15px;
+                }
+            }
+        }
         tbody {
             td {
                 vertical-align: middle;
+                &:first-child {
+                    padding-left: 15px;
+                }
+                &:last-child {
+                    padding-right: 15px;
+                }
             }
         }
     }
+}
+
+#header {
+    margin-bottom: 15px;
 }

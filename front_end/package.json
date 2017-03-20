@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "repository": {},
+  "scripts": {
+    "build": "grunt build"
+  },
   "license": "MIT",
   "dependencies": {
     "aliasify": "^2.1.0",

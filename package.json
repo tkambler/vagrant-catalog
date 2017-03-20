@@ -5,7 +5,8 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "start": "NODE_PATH=\"$NODE_PATH:./lib\" node ./bin/index.js"
+    "start": "NODE_PATH=\"$NODE_PATH:./lib\" node ./bin/index.js",
+    "install": "cd front_end; yarn install; yarn run build"
   },
   "dependencies": {
     "bcrypt": "^1.0.2",

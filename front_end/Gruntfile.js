@@ -154,19 +154,10 @@ module.exports = (grunt) => {
                 }
             }
         },
-        'connect': {
-            'server': {
-                'options': {
-                    'port': 9090,
-                    'base': 'www',
-                    'keepalive': true
-                }
-            }
-        },
         'concurrent': {
             'build': {
                 'tasks': [
-                    'watch', 'browserify', 'connect'
+                    'watch', 'browserify'
                 ],
                 'options': {
                     'logConcurrentOutput': true

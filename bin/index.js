@@ -7,7 +7,7 @@ _.defaults(process.env, {
     'PORT': 9000
 });
 
-require('app/config')(path.resolve(__dirname, '../config'))
+require('app/config')(path.resolve(__dirname, '../boxes'))
     .then((config) => {
         return require('app/api');
     });

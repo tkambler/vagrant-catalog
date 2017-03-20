@@ -3,7 +3,10 @@ RUN apk update; apk upgrade
 RUN apk add \
     htop \
     tree \
-    bash
+    bash \
+    g++ \
+    make \
+    python
 RUN npm i -g \
     yarn \
     nodemon

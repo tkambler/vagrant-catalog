@@ -1,12 +1,24 @@
 FROM mhart/alpine-node:6.10.0
 RUN apk update; apk upgrade
-RUN apk add \
-    htop \
-    tree \
-    bash \
-    g++ \
+RUN apk add bash \
+    coreutils \
+    tar \
     make \
-    python
+    gcc \
+    g++ \
+    python \
+    curl \
+    curl-dev \
+    ruby-dev \
+    build-base \
+    ruby \
+    ruby-io-console \
+    ruby-bundler \
+    build-base \
+    libffi-dev
+RUN gem install sass compass --no-ri --no-rdoc
+RUN apk del build-base libffi-dev ruby-dev
 RUN npm i -g \
     yarn \
-    nodemon
+    nodemon \
+    knex

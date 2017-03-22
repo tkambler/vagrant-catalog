@@ -5,7 +5,7 @@
   "repository": {},
   "license": "MIT",
   "scripts": {
-    "start": "NODE_PATH=\"$NODE_PATH:./lib\" node ./bin/index.js",
+    "start": "knex migrate:latest; NODE_PATH=\"$NODE_PATH:./lib\" node ./bin/index.js",
     "install": "cd front_end; yarn install; yarn run build"
   },
   "dependencies": {

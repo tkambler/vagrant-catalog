@@ -1,2 +1,5 @@
 node_modules/
+front_end/node_modules/
 boxes/
+uploads/
+*.log

@@ -1,0 +1,18 @@
+[
+    { "path": "/api/ping", "method": "GET", "handler": "require:app/api/routes/ping" },
+    { "path": "/api/config", "method": "GET", "handler": "require:app/api/routes/config/get" },
+    { "path": "/api/boxes/:user_id/:box_name", "method": "GET", "handler": "require:app/api/routes/boxes/get" },
+    { "path": "/api/users/register", "method": "PUT", "handler": "require:app/api/routes/users/register" },
+    { "path": "/api/users/sessions", "method": "POST", "handler": "require:app/api/routes/users/sessions/create" },
+    { "path": "/api/users/sessions", "method": "DELETE", "handler": "require:app/api/routes/users/sessions/destroy" },
+    { "path": "/api/users/:user_id", "method": "GET", "handler": "require:app/api/routes/users/get" },
+    { "path": "/api/users/:user_id/boxes", "method": "GET", "handler": "require:app/api/routes/users/boxes/list" },
+    { "path": "/api/users/:user_id/boxes", "method": "POST", "handler": "require:app/api/routes/users/boxes/create" },
+    { "path": "/api/users/:user_id/boxes/:box_name", "method": "DELETE", "handler": "require:app/api/routes/users/boxes/destroy" },
+    { "path": "/api/users/:user_id/boxes/:box_name/versions", "method": "POST", "handler": "require:app/api/routes/users/boxes/versions/create" },
+    { "path": "/api/users/:user_id/boxes/:box_name/versions/:version_id", "method": "DELETE", "handler": "require:app/api/routes/users/boxes/versions/destroy" },
+    { "path": "/api/users/:user_id/boxes/:box_name/versions/:version_id/providers", "method": "POST", "handler": "require:app/api/routes/users/boxes/versions/providers/create" },
+    { "path": "/api/users/:user_id/boxes/:box_name/versions/:version_id/providers/:provider_id", "method": "DELETE", "handler": "require:app/api/routes/users/boxes/versions/providers/destroy" },
+    { "path": "/api/session", "method": "GET", "handler": "require:app/api/routes/session/get" },
+    { "path": "/api/session", "method": "DELETE", "handler": "require:app/api/routes/session/destroy" }
+]

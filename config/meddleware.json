@@ -1,0 +1,108 @@
+{
+    "morgan": {
+        "enabled": true,
+        "priority": 1,
+        "module": {
+            "name": "morgan",
+            "arguments": [
+                "combined"
+            ]
+        }
+    },
+    "session": {
+        "enabled": true,
+        "priority": 2,
+        "module": {
+            "name": "app/api/middleware/session"
+        }
+    },
+    "bodyParserJSON": {
+        "enabled": true,
+        "priority": 3,
+        "module": {
+            "name": "body-parser",
+            "method": "json",
+            "arguments": [
+                {
+                    "limit": "50mb"
+                }
+            ]
+        }
+    },
+    "bodyParserUrlEncoding": {
+        "enabled": false,
+        "priority": 4,
+        "module": {
+            "name": "body-parser",
+            "method": "urlencoded",
+            "arguments": [
+                {
+                    "extended": true,
+                    "limit": "50mb"
+                }
+            ]
+        }
+    },
+    "auth": {
+        "enabled": true,
+        "priority": 5,
+        "module": {
+            "name": "app/api/middleware/auth"
+        }
+    },
+    "query-default": {
+        "enabled": true,
+        "priority": 6,
+        "module": {
+            "name": "app/api/middleware/query-default"
+        }
+    },
+    "uploads-box": {
+        "enabled": true,
+        "priority": 6,
+        "module": {
+            "name": "app/api/middleware/upload/box"
+        },
+        "route": [
+            "regex:^\/api\/users\/(\\d{1,})\/boxes\/(\\d{1,})\/versions\/(\\d{1,})\/providers"
+        ]
+    },
+    "static": {
+        "enabled": true,
+        "priority": 7,
+        "module": {
+            "name": "express",
+            "method": "static",
+            "arguments": [
+                "config:frontend_dir"
+            ]
+        }
+    },
+    "enrouten": {
+        "enabled": true,
+        "priority": 50,
+        "module": {
+            "name": "express-enrouten",
+            "arguments": [
+                {
+                    "index": "path:../lib/app/api/routes/index",
+                    "routes": "import:./routes"
+                }
+            ]
+        }
+    },
+    "error": {
+        "enabled": true,
+        "priority": 60,
+        "module": {
+            "name": "app/api/middleware/error"
+        }
+    },
+    "compression": {
+        "enabled": true,
+        "priority": 70,
+        "module": {
+            "name": "compression"
+        }
+    }
+}

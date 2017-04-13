@@ -7,7 +7,10 @@ _.defaults(process.env, {
     'PORT': 9000
 });
 
-require('app/config')(path.resolve(__dirname, '../boxes'))
-    .then((config) => {
+require('app/config')(path.resolve(__dirname, '../config'))
+    .then(() => {
+        return require('app/knex')();
+    })
+    .then(() => {
         return require('app/api');
     });

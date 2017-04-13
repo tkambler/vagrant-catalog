@@ -7,6 +7,7 @@ exports.up = function(knex, Promise) {
         table.integer('box_version_id').references('box_versions.id').notNullable();
         table.string('name').notNullable();
         table.string('file').notNullable();
+        table.string('original_filename').notNullable();
         table.string('checksum').notNullable();
         table.timestamps(true, true);
     });

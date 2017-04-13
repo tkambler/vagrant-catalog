@@ -31,49 +31,53 @@ module.exports = {
             },
             'template': `
 
-            <div class="row">
+            <div class="vertical">
 
-                <div class="col-xs-4"></div>
+                <div class="row">
 
-                <div class="col-xs-4">
+                    <div class="col-xs-4"></div>
 
-                    <div class="panel panel-default">
-                      <div class="panel-heading">
-                        <h3 class="panel-title">Sign In</h3>
-                      </div>
-                      <div class="panel-body">
+                    <div class="col-xs-4">
 
-                        <div class="row">
-                            <div class="col-xs-12">
+                        <div class="panel panel-default">
+                          <div class="panel-heading">
+                            <h3 class="panel-title">Sign In</h3>
+                          </div>
+                          <div class="panel-body">
 
-                                <form>
+                            <div class="row">
+                                <div class="col-xs-12">
 
-                                    <div class="form-group">
-                                        <label for="username">Username</label>
-                                        <input type="text" class="form-control" id="username" placeholder="Username" ng-model="$ctrl.model.username" auto-focus required>
-                                    </div>
+                                    <form>
 
-                                    <div class="form-group">
-                                        <label for="password">Password</label>
-                                        <input type="password" class="form-control" id="password" placeholder="Password" ng-model="$ctrl.model.password" required>
-                                    </div>
+                                        <div class="form-group">
+                                            <label for="username">Username</label>
+                                            <input type="text" class="form-control" id="username" placeholder="Username" ng-model="$ctrl.model.username" auto-focus required>
+                                        </div>
 
-                                    <button type="submit" class="btn btn-primary" ng-click="$ctrl.signIn()">Sign In</button>
-                                    <button type="submit" class="btn btn-link" ng-if="$ctrl.registration_enabled" ng-click="$ctrl.register()">No Account? Register Here</button>
+                                        <div class="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" class="form-control" id="password" placeholder="Password" ng-model="$ctrl.model.password" required>
+                                        </div>
 
-                                </form>
+                                        <button type="submit" class="btn btn-primary" ng-click="$ctrl.signIn()">Sign In</button>
+                                        <button type="submit" class="btn btn-link" ng-if="$ctrl.registration_enabled" ng-click="$ctrl.register()">No Account? Register Here</button>
 
+                                    </form>
+
+                                </div>
                             </div>
+
+                          </div>
+                          <div class="panel-footer">
+                          </div>
                         </div>
 
-                      </div>
-                      <div class="panel-footer">
-                      </div>
                     </div>
 
-                </div>
+                    <div class="col-xs-4"></div>
 
-                <div class="col-xs-4"></div>
+                </div>
 
             </div>
 

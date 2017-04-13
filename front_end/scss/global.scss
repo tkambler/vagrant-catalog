@@ -9,9 +9,6 @@ html {
 
 body {
     height: 100%;
-    &.container-fluid {
-        padding-top: 15px;
-    }
 }
 
 a {
@@ -22,6 +19,13 @@ ui-view {
     display: block;
 }
 
+.container-fluid {
+}
+
 textarea {
     resize: none;
+}
+
+.provider-btn {
+    padding-left: 0;
 }

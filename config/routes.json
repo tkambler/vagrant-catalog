@@ -2,6 +2,7 @@
     { "path": "/api/ping", "method": "GET", "handler": "require:app/api/routes/ping" },
     { "path": "/api/config", "method": "GET", "handler": "require:app/api/routes/config/get" },
     { "path": "/api/boxes/:user_id/:box_name", "method": "GET", "handler": "require:app/api/routes/boxes/get" },
+    { "path": "/api/providers/:provider_id/download", "method": "GET", "handler": "require:app/api/routes/providers/download" },
     { "path": "/api/users/register", "method": "PUT", "handler": "require:app/api/routes/users/register" },
     { "path": "/api/users/sessions", "method": "POST", "handler": "require:app/api/routes/users/sessions/create" },
     { "path": "/api/users/sessions", "method": "DELETE", "handler": "require:app/api/routes/users/sessions/destroy" },

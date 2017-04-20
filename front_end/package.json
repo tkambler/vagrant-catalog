@@ -10,6 +10,7 @@
   "dependencies": {
     "aliasify": "^2.1.0",
     "angular": "^1.6.3",
+    "angular-loading-bar": "^0.9.0",
     "angular-sanitize": "^1.6.3",
     "angular-ui-bootstrap": "^2.5.0",
     "angular-ui-router": "^0.4.2",

@@ -1,6 +1,6 @@
 # Vagrant Catalog
 
-![Screenshot](./misc/screenshot.png)
+![Example Video](https://github.com/tkambler/vagrant-catalog/raw/master/misc/vagrant-catalog.gif)
 
 This application allows you to run your own private Vagrant catalog. In other words, it provides a UI for managing boxes, which can then be referenced in a Vagrantfile as shown below:
 

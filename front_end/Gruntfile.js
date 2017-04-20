@@ -35,6 +35,7 @@ module.exports = (grunt) => {
                     'node_modules/noty/js/noty/packaged/jquery.noty.packaged.js',
                     'node_modules/noty/js/noty/themes/bootstrap.js',
                     'node_modules/noty/js/noty/layouts/topCenter.js',
+                    'node_modules/angular-loading-bar/build/loading-bar.js'
                 ],
                 'dest': 'www/js/concat.js',
                 'nonull': true
@@ -150,6 +151,7 @@ module.exports = (grunt) => {
             'vendor': {
                 'files': {
                     'www/css/vendor.css': [
+                        'node_modules/angular-loading-bar/build/loading-bar.css'
                     ]
                 }
             }

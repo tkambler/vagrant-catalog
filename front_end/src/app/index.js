@@ -13,7 +13,9 @@ const app = module.exports = angular.module('app', [
     'validation.match',
     'ngSanitize',
     'ui.bootstrap',
-    'notify'
+    'notify',
+    'angular-loading-bar',
+    'cfp.loadingBar'
 ]);
 
 bulk(__dirname, ['services/*', 'directives/*', 'components/*']);
@@ -48,5 +50,10 @@ app.config(function($stateProvider, $urlRouterProvider, RestangularProvider) {
 
 });
 
-app.run(($log) => {
+app.run(function($rootScope, $log, $state) {
+
+    $rootScope.$on('$stateChangeError', function() {
+        $state.go('login');
+    });
+
 });

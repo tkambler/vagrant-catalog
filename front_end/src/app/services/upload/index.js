@@ -4,7 +4,7 @@
 const app = require('app');
 const _ = require('lodash');
 
-app.factory('upload', function($log) {
+app.factory('upload', function($log, cfpLoadingBar) {
 
     class Upload {
 
@@ -12,13 +12,17 @@ app.factory('upload', function($log) {
 
             return new Promise((resolve, reject) => {
 
+                cfpLoadingBar.start();
+
                 const xhr = new XMLHttpRequest();
                 xhr.upload.addEventListener('progress', (ev) => {
-                    $log.debug((ev.loaded/ev.total)+'%');
+                    let perc = ev.loaded / ev.total;
+                    cfpLoadingBar.set(perc);
                 }, false);
 
                 xhr.onreadystatechange = (ev) => {
                     if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+                        cfpLoadingBar.complete();
                         return resolve(xhr.responseText);
                     }
                 };

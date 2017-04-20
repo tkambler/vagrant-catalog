@@ -12,8 +12,6 @@ app.component('createBox', {
 
         this.$onInit = () => {
 
-            $log.debug('modal', this);
-
             this.model = {};
             this.readOnly = false;
 

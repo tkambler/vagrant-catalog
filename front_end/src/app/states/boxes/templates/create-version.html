@@ -1,0 +1,26 @@
+<form name="form">
+
+    <div class="modal-header">
+        <h3 class="modal-title">Create New Version</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+
+        <div class="row">
+            <div class="col-xs-12">
+
+                <div class="form-group">
+                    <label for="version">Version</label>
+                    <input type="text" class="form-control" id="version" name="version" auto-focus placeholder="1.0.0" ng-model="$ctrl.model.version" required>
+                    <p class="help-block">Must be a valid semantic version (SemVer) number (e.g. 1.0.0)</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" type="button" ng-click="$ctrl.close()">Close</button>
+        <button class="btn btn-primary" type="submit" ng-click="$ctrl.submit()">Create Version</button>
+    </div>
+
+</form>

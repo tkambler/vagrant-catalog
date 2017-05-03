@@ -1,0 +1,73 @@
+<div class="row" ng-repeat="box in $ctrl.boxes">
+
+    <div class="col-xs-12">
+
+        <div class="panel panel-default box-panel">
+
+          <div class="panel-heading">
+            <div class="row">
+                <div class="col-xs-10">
+                    <h3 class="panel-title"><span ng-bind="$ctrl.session.username"></span>/<span ng-bind="box.name"></span></h3>
+                    <div class="small" ng-bind-html="box.url"></div>
+                </div>
+                <div class="col-xs-2">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Action <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li><a ng-click="$ctrl.createNewVersion(box)">Create New Version</a></li>
+                            <li><a ng-click="$ctrl.deleteBox(box)">Delete Box</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="panel-body">
+
+            <div class="row">
+                <div class="col-xs-12" ng-bind-html="box.description"></div>
+            </div>
+
+          </div>
+          <table class="table table-striped" ng-show="box.versions.length > 0">
+            <thead>
+                <tr>
+                    <th>Version</th>
+                    <th>Providers</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="version in box.versions">
+                    <td width="25%" ng-bind="version.version"></td>
+                    <td width="65%">
+                        <div class="btn-group" ng-repeat="provider in version.providers">
+                            <button class="btn btn-link provider-btn dropdown-toggle" data-toggle="dropdown" ng-bind="provider.name"></button>
+                            <ul class="dropdown-menu">
+                                <li><a ng-click="$ctrl.deleteProvider(box, version, provider)">Delete Provider</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                    <td width="10%">
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-asterisk"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a ng-click="$ctrl.addProvider(box, version)">Add Provider</a></li>
+                                <li><a ng-click="$ctrl.deleteVersion(box, version)">Delete Version</a></li>
+                            </ul>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+          </table>
+          <div class="panel-footer">
+          </div>
+        </div>
+
+    </div>
+
+</div>

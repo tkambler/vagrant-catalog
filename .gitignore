@@ -1,7 +1,8 @@
 .DS_Store
-boxes/
-node_modules/
-uploads/
+/boxes/
+/node_modules/
+/front_end/node_modules/
+/uploads/
 *.log
 db.sqlite
 

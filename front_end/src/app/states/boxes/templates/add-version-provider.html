@@ -1,0 +1,33 @@
+<form name="form">
+
+    <div class="modal-header">
+        <h3 class="modal-title">Add Provider</h3>
+    </div>
+    <div class="modal-body" id="modal-body">
+
+        <div class="row">
+
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" auto-focus placeholder="Name" ng-model="$ctrl.model.name" required>
+                    <p class="help-block">e.g. "virtualbox"</p>
+                </div>
+            </div>
+
+            <div class="col-xs-6">
+                <div class="form-group">
+                    <label for="file">File</label>
+                    <input type="file" class="form-control" id="file" name="file" file-input callback="$ctrl.fileCallback" placeholder="File" required>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn btn-default" type="button" ng-click="$ctrl.close()">Close</button>
+        <button class="btn btn-primary" type="submit" ng-click="$ctrl.submit()">Add Provider</button>
+    </div>
+
+</form>
